@@ -1,0 +1,91 @@
+import axios from "../utils/axios";
+import { useEffect, useState } from "react";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { useNavigate } from "react-router-dom";
+import Loading from "../components/Loading";
+import Topnav from "../components/partials/Topnav";
+import Dropdown from "../components/partials/Dropdown";
+import Cards from "../components/partials/Cards";
+
+const Tvshows = () => {
+    const navigate = useNavigate();
+  const [tv, setTv] = useState([]);
+  const [category, setCategory] = useState("airing_today");
+  const [page, setPage] = useState(1);
+  const [hasMore, sethasMore] = useState(true);
+  document.title = "MoviX | TV Shows " + category.toUpperCase();
+
+  const getTv = async () => {
+    try {
+      const { data } = await axios.get(`/tv/${category}?page=${page}`);
+      if (data.results.length > 0) {
+        setTv((prev) => [...prev, ...data.results]);
+        setPage(data.page + 1);
+      } else {
+        sethasMore(false);
+      }
+    } catch (error) {
+      console.log("Error : ", error);
+    }
+  };
+
+  const refreshHandler = () => {
+    if (tv.length === 0) {
+      getTv();
+    } else {
+      setPage(1);
+      setTv([]);
+      getTv();
+    }
+  };
+
+  useEffect(() => {
+    refreshHandler();
+  }, [category]);
+
+
+  return tv.length > 0 ? (
+    <div
+      id="scrollableDiv"
+      className=" px-[3%] py-[1%] w-full h-screen overflow-hidden overflow-y-auto"
+    >
+      <div className="flex items-center">
+        <h1 className="text-3xl text-zinc-200 font-semibold flex items-end gap-2">
+          <i
+            onClick={() => navigate(-1)}
+            className="font-medium mr-5 hover:text-[#6556CD] ri-arrow-left-circle-line"
+          ></i>
+          Shows
+          <span className="text-zinc-400 text-base font-thin pb-1">
+            {" "}
+            ({category.toUpperCase()})
+          </span>
+        </h1>
+        <Topnav />
+        <Dropdown
+          title="Category"
+          options={["on_the_air", "popular", "top_rated", "airing_today"]}
+          func={(e) => setCategory(e.target.value)}
+        />
+      </div>
+
+      <InfiniteScroll
+        loader={
+          <h1 className="text-zinc-500 text-lg text-center font-semibold">
+            Loading...
+          </h1>
+        }
+        dataLength={tv.length}
+        next={getTv}
+        hasMore={hasMore}
+        scrollableTarget="scrollableDiv"
+      >
+        <Cards data={tv} title="tv" />
+      </InfiniteScroll>
+    </div>
+  ) : (
+    <Loading />
+  );
+}
+
+export default Tvshows
