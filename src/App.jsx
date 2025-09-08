@@ -11,6 +11,7 @@ import Peopledetails from './components/Peopledetails'
 import Trailer from './components/partials/Trailer'
 import Notfound from './components/Notfound'
 import About from './components/About'
+import Contact from './components/Contact'
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
         </Route>
         <Route path='/people' element={<People />} />
         <Route path='/about' element={<About />} />
+        <Route path='/contactus' element={<Contact />} />
         <Route path='/person/details/:id' element={<Peopledetails />} />
         <Route path='*' element={<Notfound />} />
       </Routes>
