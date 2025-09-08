@@ -1,12 +1,33 @@
-# React + Vite
+# 🎬 MoviX  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern movie & TV discovery web app built with **React** and powered by the **TMDB API**.  
+MoviX lets users explore trending titles, watch trailers, search movies, TV shows, and artists — all with detailed pages and rich metadata.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features  
 
-## Expanding the ESLint configuration
+- 🔎 **Smart Search** – Search movies, TV shows, and artists.  
+- 🎥 **Watch Trailers** – Play official trailers directly inside the app.  
+- 📊 **Trending & Popular Lists** – Browse daily trending and popular titles.  
+- 🎬 **Filter by Type** – Switch easily between Movies and TV Shows.  
+- 👤 **Artist Pages** – Dedicated profiles with filmography and details.  
+- 🎞 **Recommendations** – Get similar movies/shows for every title.  
+- 🖼 **Dynamic Banners** – Randomized trending wallpapers on load.  
+- 🌍 **OTT Availability** – Check which streaming platforms content is available on.  
+- 🔗 **External Links** – Jump to IMDb, official movie site, or WikiData directly.  
+- ♾ **Infinite Scroll** – Seamless browsing with endless content loading.  
+- 🗂 **State Management with Redux** – Centralized store for smooth data flow.  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠 Tech Stack  
+
+- **React**  
+- **Redux** (State management)  
+- **React Router**  
+- **Axios**  
+- **React Infinite Scroll**  
+- **TMDB API**  
+- **Tailwind CSS**  
+
