@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 const Sidenav = () => {
   return (
     <>
-      <div className="w-[20%] h-full border-r-2 border-zinc-400 p-5">
-        <Link to="/" className="text-2xl text-white font-bold">
-          <i className="text-[#6556CD] text-3xl ri-movie-ai-fill mr-3"></i>
+      <div className="w-[20%] h-full border-r-2 border-zinc-400 p-7">
+        <Link to="/" className="text-3xl text-white font-bold">
+          <i className="text-[#6556CD] text-4xl ri-movie-ai-fill mr-3"></i>
           <span>MoviX</span>
         </Link>
         <nav className="flex flex-col text-lg text-zinc-400 gap-3">
@@ -42,7 +42,7 @@ const Sidenav = () => {
             <i className="mr-2 ri-information-fill"></i>
             About MoviX
           </Link>
-          <Link className="hover:bg-[#6556CD] p-4 hover:text-white rounded-lg duration-500 ">
+          <Link to="/contactus" className="hover:bg-[#6556CD] p-4 hover:text-white rounded-lg duration-500 ">
             <i className="mr-2 ri-phone-fill"></i>
             Contact Us
           </Link>
