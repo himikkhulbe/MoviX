@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Header = ({ data }) => {
   
   return (
-    <div
+   <div
       style={{
         background: `linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.5),rgba(0,0,0,0.9)), url(https://image.tmdb.org/t/p/original/${
           data.backdrop_path || data.profile_path
@@ -17,7 +17,7 @@ const Header = ({ data }) => {
         {data.original_title || data.name || data.title || data.original_name}
       </h1>
       <p className="text-zinc-200 mt-5 w-[70%] text-lg font-light">
-        {data.overview.slice(0, 200)}
+        {data?.overview?.slice(0, 200)}
         <Link to={`${data.media_type}/details/${data.id}`} className="text-blue-400 hover:text-blue-500 duration-100">...more</Link>
       </p>
       <p className="flex gap-10 text-zinc-200 mt-3 font-light">
