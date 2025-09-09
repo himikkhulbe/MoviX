@@ -7,7 +7,8 @@ const About = () => {
     <div className="w-full p-[6vh] flex gap-5 text-white">
       <i
         onClick={() => navigate(-1)}
-        className="font-medium mr-5 text-4xl hover:text-[#6556CD] ri-arrow-left-circle-line"
+        title="Go back"
+        className="font-medium mr-5 text-4xl hover:text-[#6556CD] ri-arrow-left-circle-line cursor-pointer"
       ></i>
       <div>
         <h1 className="text-3xl font-bold">About MoviX</h1>

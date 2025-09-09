@@ -53,7 +53,8 @@ const Trending = () => {
         <h1 className="text-3xl text-zinc-200 font-semibold flex items-end gap-2">
           <i
             onClick={() => navigate(-1)}
-            className="font-medium mr-5 hover:text-[#6556CD] ri-arrow-left-circle-line"
+            title="Go back"
+            className="font-medium mr-5 hover:text-[#6556CD] ri-arrow-left-circle-line cursor-pointer"
           ></i>
           Trending
           <span className="text-zinc-400 text-base font-thin pb-1">

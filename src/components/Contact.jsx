@@ -9,6 +9,7 @@ const Contact = () => {
       {/* Back Button */}
       <i
         onClick={() => navigate(-1)}
+        title="Go back"
         className="font-medium mr-5 text-4xl hover:text-[#6556CD] ri-arrow-left-circle-line cursor-pointer"
       ></i>
 
