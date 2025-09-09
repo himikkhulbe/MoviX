@@ -38,25 +38,31 @@ const Moviedetails = () => {
         <div>
         <Link
           onClick={() => navigate(-1)}
+          title="Go back"
           className="font-medium -ml-16 mr-7 hover:text-[#6556CD] text-zinc-200 text-4xl ri-arrow-left-circle-line"
           ></Link>
-        <Link to="/" className="text-3xl text-[#6556CD] font-bold">
+        <Link to="/" title="Go to HomePage" className="text-3xl text-[#6556CD] font-bold">
           <i className="text-[#6556CD] text-4xl ri-movie-ai-fill mr-2"></i>
           <span>MoviX</span>
         </Link>
           </div>
           <div className="flex gap-10">
-        <a target="_blank" href={info.detail.homepage}>
+        <a target="_blank" title={`${info.detail.title ||
+                info.detail.original_title ||
+                info.detail.name ||
+                info.detail.original_name} Website`} href={info.detail.homepage}>
           <img src={website} className="w-11 hover:scale-110 duration-150" />
         </a>
         <a
           target="_blank"
+          title="Wikidata"
           href={`https://www.wikidata.org/wiki/${info.externalid.wikidata_id}`}
           >
           <img src={wikipedia} className="w-10 hover:scale-110 duration-150" />
         </a>
         <a
           target="_blank"
+          title="IMDb"
           href={`https://www.imdb.com/title/${info.externalid.imdb_id}/`}
           >
           <img src={imdb} className="w-11 hover:scale-110 duration-150" />

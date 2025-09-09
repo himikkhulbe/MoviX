@@ -61,6 +61,7 @@ const Peopledetails = () => {
           <div className="mt-5 flex justify-between items-center">
             <a
               target="_blank"
+              title="Wikidata"
               href={`https://www.wikidata.org/wiki/${info.externalid.wikidata_id}`}
             >
               <img
@@ -70,6 +71,7 @@ const Peopledetails = () => {
             </a>
             <a
               target="_blank"
+              title="Instagram"
               href={`https://www.instagram.com/${info.externalid.instagram_id}`}
             >
               <img
@@ -79,6 +81,7 @@ const Peopledetails = () => {
             </a>
             <a
               target="_blank"
+              title="Facebook"
               href={`https://www.facebook.com/${info.externalid.facebook_id}`}
             >
               <img
@@ -88,6 +91,7 @@ const Peopledetails = () => {
             </a>
             <a
               target="_blank"
+              title="X"
               href={`https://x.com/${info.externalid.twitter_id}`}
             >
               <img src={x} className="w-11 hover:scale-110 duration-150" />
